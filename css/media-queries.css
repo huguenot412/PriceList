@@ -1,0 +1,10 @@
+@media only screen and (max-width: 1700px) {
+    .products__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .products__list {
+        grid-template-columns: 1fr;
+    }
+}
