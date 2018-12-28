@@ -27,6 +27,15 @@ const QuoteItem = ko.components.register('quote-item', {
                     <i class="fas fa-trash quote-item__icon" data-bind="click: removeItem"></i>
                 </div>
             </div>
+            <div class="item-details-tooltip">
+                <div class="tooltip-wrapper">
+                    <ul>
+                        <li>SKU: <span data-bind="text: sku"></span></li>
+                        <li>MSRP: $<span data-bind="text: MSRP"></span></li>
+                        <li>Disti: $<span data-bind="text: distiPrice"></span></li>
+                    </ul>
+                </div>
+            </div>
         </li>
     `
 });

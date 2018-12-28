@@ -19,8 +19,10 @@
 <body>
     <div class="page-container">
         <div data-bind="component: selectedComponent"></div>
-        <!-- <pricelist></pricelist> -->
         <quote-tool></quote-tool>
+        <div class="toTopButton">
+            <i class="fas fa-long-arrow-alt-up"></i>
+        </div>
     </div>
     
 <script type="module">
@@ -35,6 +37,27 @@
 
     ko.applyBindings(mainViewModel);
 
+</script>
+<script>
+    const toTopButton = document.querySelector('.toTopButton');
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
+    const showToTopButton = () => {
+        if( window.scrollY >  window.innerHeight / 2 ) {
+            toTopButton.classList.remove('hidden');
+        } else {
+            toTopButton.classList.add('hidden');
+        }
+    }
+
+    window.addEventListener('scroll', showToTopButton);
+    toTopButton.addEventListener('click', scrollToTop);
 </script>
 </body>
 </html>

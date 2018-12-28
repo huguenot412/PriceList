@@ -1,12 +1,35 @@
 const Store = {
     products: ko.observableArray([
         {
-            name: 'Breath of the Wild',
+            name: 'The Legend of Zelda: Breath of the Wild',
             MSRP: 60,
             distiPrice: 50,
             sku: 'AD897FJA0JA3098',
             platforms: ['Switch'],
-            qty: ko.observable(0)
+            qty: ko.observable(0),
+            description: "The Legend of Zelda: Breath of the Wild is the nineteenth main installment of The Legend of Zelda series. It was released simultaneously worldwide for the Wii U and Nintendo Switch on March 3, 2017",
+            testimonials: [
+                {
+                    text: "Greatest game of all time!!!",
+                    quotee: "Link"
+                },
+                {
+                    text: "Wake up, Link...",
+                    quotee: "Princess Zelda"
+                }
+            ],
+            videos: [
+                {
+                    title: "Let's Play"
+                },
+                {
+                    title: "IGN Review"
+                },
+                {
+                    title: "E3 2016 Trailer"
+                }
+            ],
+            features: ["Vast open world", "Interactive environmental systems", "Master Sword", "Hang gliding", "Cooking"]
         },
         {
             name: 'Nier Automata',

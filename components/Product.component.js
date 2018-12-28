@@ -31,7 +31,7 @@ const Product = ko.components.register('product', {
             <ul class="product__platforms" data-bind="foreach: platforms">
                 <li class="product__platform"data-bind="text: $data"></li>        
             </ul>
-            <div class="product__button" data-bind="click: addToQuote">
+            <div class="btn product__button" data-bind="click: addToQuote">
                 <i class="fas fa-plus"></i>
                 Add To Quote
             </div>
@@ -39,7 +39,9 @@ const Product = ko.components.register('product', {
                 <span class="product__qty-label">Qty: </span>
                 <input type="number" class="product__add-qty" data-bind="value: addQty" min="0">
             </div>
-            <button data-bind="click: viewProductPage">View Product Page</button>
+            <div class="product__button" data-bind="click: viewProductPage">
+                <i class="fas fa-arrow-right"></i> Product Page
+            </div>
         </div>
     `
 });

@@ -13,8 +13,9 @@ const Discounts = ko.components.register('discounts', {
     template: `
         <div class="deal-reg">
             <div class="has-deal-reg">
-                <input class="deal-reg-checkbox" type="checkbox" data-bind="checked: hasDealReg">
-                <p class="has-deal-reg-label" data-bind="css: { highlighted: hasDealReg() }">I have registered this opportunity</p>
+                <label class="has-deal-reg-label" for="hasDealReg" data-bind="css: { highlighted: hasDealReg() }">
+                    <input id="hasDealReg" class="deal-reg-checkbox" name="hasDealReg" type="checkbox" data-bind="checked: hasDealReg"> I have registered this opportunity
+                </label>
             </div>
             <div data-bind="if: hasDealReg">
                 <h3>Partner Level:</h3>

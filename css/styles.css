@@ -136,9 +136,14 @@ h1 {
     background-color: #123539;
 }
 
+.product__button--margin-bottom {
+    margin-bottom: 2rem;
+}
+
 .product__addQty-wrapper {
     display: inline-block;
     padding-left: 1rem;
+    margin-bottom: .4rem;
 }
 
 .product__qty-label {
@@ -155,6 +160,41 @@ h1 {
     text-align: center;
 }
 
+/* Product Page */
+
+.product-page__info {
+    padding: 1.6rem 0;
+    font-size: 1rem;
+}
+
+.info__section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+
+.testimonial:not(:last-child) {
+    margin-bottom: 1.4rem;
+}
+
+.testimonial__quote {
+    margin-bottom: 1rem;
+}
+
+.testimonial__quote::before,
+.testimonial__quote::after {
+    content: "\"";
+
+}
+
+.testimonial__quotee {
+    padding-left: 1.2rem;
+}
+
+.testimonial__quotee::before {
+    content: "-";
+}
+
 /* Quote Tool */
 
 .quote-tool {
@@ -163,6 +203,29 @@ h1 {
 
 .quote-tool:hover {
     box-shadow: -10px 0 10px -2px #777; 
+}
+
+.quote-tool__header {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.quote-tool__title {
+    justify-self: left;
+    align-content: center;
+}
+
+.quote-tool__totalItems {
+    font-size: 1.5rem;
+    background-color: #3F5153;
+    color: #fff;
+    padding: 1rem;
+    align-self: top;
+    justify-self: stretch;
+    justify-items: center;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .quote__dashboard {
@@ -199,11 +262,13 @@ h1 {
 
 .has-deal-reg-label {
     display: inline-block;
+    font-size: 1rem;
 }
 
 .quote-item {
     font-size: 1.2rem;
     display: grid;
+    position: relative;
     grid-template-columns: 5rem 1fr;
     justify-items: stretch;
     margin-bottom: 1rem;
@@ -247,6 +312,44 @@ h1 {
     color: #3DB7C6;
 }
 
+.item-details-tooltip {
+    opacity: 0;
+    position: absolute;
+    left: -18rem;
+    top: 0;
+    background-color: #3F5153;
+    color: #fff;
+    transition: opacity .2s ease-in-out;
+    width: 16rem;
+    padding: 1rem;
+    border-radius: 5px;
+    transform: translateX(5000px);
+    z-index: 1000;
+}
+
+.tooltip-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.tooltip-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #3F5153;
+    top: 0px;
+    right: -1.6rem;
+
+}
+
+.quote-item:hover .item-details-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .discount-input {
     padding: .5rem;
     border-radius: 5px;
@@ -267,6 +370,35 @@ h1 {
 
 .highlighted {
     color: #42b983;
+}
+
+.toTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: .9;
+    background-color: #3DB7C6;
+    color: #fff;
+    padding: .8rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    transition: .2s ease-in-out;
+}
+
+.toTopButton i {
+    transition: .2s ease-in-out;
+}
+
+.toTopButton:hover i {
+    transform: translateY(-.2rem);
+}
+
+.toTopButton:hover {
+    background-color: #123539;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 

@@ -43,10 +43,21 @@ const QuoteTool = ko.components.register('quote-tool', {
                 }, 0)
                 .toFixed(2);
         }, this);
+        this.totalQuoteItems = ko.computed(function() {
+            return this.selectedProducts()
+                .map(product => product.qty())
+                .reduce((a, b) => { return a + b }, 0);
+        }, this);
     },
     template: `
         <div class="quote-tool">
-            <div class="quote-tool__header"><h1>Quote Tool</h1></div>
+            <div class="quote-tool__header">
+                <h1 class="quote-tool__title">Quote Tool</h1>
+                <div class="quote-tool__totalItems">
+                    <span data-bind="text: totalQuoteItems"></span>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
             <div class="quote__dashboard">
                 <h2 class="dashboard__label">Total MSRP:</h2>
                 <div class="dashboard__amount">$<span data-bind="text: totalMSRP()"></span></div>  
