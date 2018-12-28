@@ -42,9 +42,10 @@ const Product = ko.components.register('product', {
                 <span class="product__qty-label">Qty: </span>
                 <input type="number" class="product__add-qty" data-bind="value: addQty" min="0">
             </div>
-            <div class="product__button" data-bind="click: viewProductPage">
-                <i class="fas fa-arrow-right"></i> Product Page
-            </div>
+            <div class="product__corner-button" data-bind="click: viewProductPage">
+                <i class="corner-button__icon fas fa-info-circle"></i>
+            </div>    
+            
         </div>
     `
 });

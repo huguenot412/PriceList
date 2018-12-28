@@ -4,6 +4,7 @@ import { Product } from './Product.component.js';
 const PriceList = ko.components.register('pricelist', {
     viewModel: function(params) {
         this.products = ko.computed(function() {
+            // Sort products alphabetically
             return (Store.products().sort((a, b) => {
                 const nameA = a.name.toLowerCase();
                 const nameB = b.name.toLowerCase();
@@ -19,6 +20,7 @@ const PriceList = ko.components.register('pricelist', {
                 return this.products().filter(product => {
                     return product.platforms
                         .map(platform => platform.toLowerCase())
+                        // concatenate platforms array into string to make 'includes' search easier
                         .reduce((accum, current) => `${accum} ${current}`)
                         .includes(this.searchQuery().toLowerCase());
                 });
@@ -36,14 +38,16 @@ const PriceList = ko.components.register('pricelist', {
         <div class="pricelist">
             <div class="pricelist__header">
                 <h1 class="pricelist__title">Products</h1>
-                <input type="search" class="pricelist__search" data-bind="textInput: searchQuery, attr: {placeholder: searchPlaceholder}">
-                <i class="fas fa-search pricelist__search-icon"></i>
+                <div class="pricelist__search-bar-container">
+                    <i class="fas fa-search pricelist__search-icon"></i>    
+                    <input type="search" class="pricelist__search" data-bind="textInput: searchQuery, attr: {placeholder: searchPlaceholder}">
+                </div>
                 <div class="pricelist__search-by-options">
-                    <label for="SearchByName">
+                    <label class="search-by-label" for="SearchByName">
                     <input type="radio" id="SearchByName" name="searchOptions" data-bind="checked: searchBy" value="name" checked>Name</label>
-                    <label for="SearchBySKU">
+                    <label class="search-by-label" for="SearchBySKU">
                         <input type="radio" id="SearchBySKU" name="searchOptions" data-bind="checked: searchBy" value="sku">SKU</label>
-                    <label for="SearchByPlatform">
+                    <label class="search-by-label" for="SearchByPlatform">
                         <input type="radio" id="SearchByPlatform" name="searchOptions" data-bind="checked: searchBy" value="platform">Platform</label>
                 </div>
             </div>

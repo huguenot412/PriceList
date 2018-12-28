@@ -23,7 +23,7 @@ const ProductPage = ko.components.register('product-page', {
         }
     },
     template: `
-        <div class="product product-page">
+        <div class="product-page">
             <div class="product-page__info product-page__info--details">
                 <div class="product__button product__button--margin-bottom" data-bind="click: returnToPriceList">
                     <i class="fas fa-arrow-left"></i> Return To Price List

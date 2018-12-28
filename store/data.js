@@ -29,7 +29,14 @@ const Store = {
                     title: "E3 2016 Trailer"
                 }
             ],
-            features: ["Vast open world", "Interactive environmental systems", "Master Sword", "Hang gliding", "Cooking"]
+            features: [
+                "Vast open world",
+                "Interactive environmental systems",
+                "Master Sword",
+                "Hang gliding",
+                "Cooking",
+                "Angry swarming chickens"
+            ]
         },
         {
             name: 'Nier Automata',
