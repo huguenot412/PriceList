@@ -28,12 +28,15 @@ const PriceList = ko.components.register('pricelist', {
                 });
             }
         }, this);
+        this.searchPlaceholder = ko.computed(function() {
+            return `Search products by ${this.searchBy()}`;
+        }, this);
     },
     template: `
         <div class="pricelist">
             <div class="pricelist__header">
                 <h1 class="pricelist__title">Products</h1>
-                <input type="search" class="pricelist__search" placeholder="Search Products" data-bind="textInput: searchQuery">
+                <input type="search" class="pricelist__search" data-bind="textInput: searchQuery, attr: {placeholder: searchPlaceholder}">
                 <i class="fas fa-search pricelist__search-icon"></i>
                 <div class="pricelist__search-by-options">
                     <label for="SearchByName">

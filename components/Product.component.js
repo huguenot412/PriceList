@@ -19,6 +19,9 @@ const Product = ko.components.register('product', {
             console.log(params.product);
             Store.selectedProduct(params.product);
             Store.selectedComponent("product-page");
+            window.scrollTo({
+                top: 0
+            });
         };
     },
     template: `

@@ -207,7 +207,7 @@ h1 {
 
 .quote-tool__header {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 6rem;
 }
 
 .quote-tool__title {
@@ -325,6 +325,7 @@ h1 {
     border-radius: 5px;
     transform: translateX(5000px);
     z-index: 1000;
+    display: none;
 }
 
 .tooltip-wrapper {
@@ -348,6 +349,7 @@ h1 {
 .quote-item:hover .item-details-tooltip {
     opacity: 1;
     transform: translateX(0);
+    display: block;
 }
 
 .discount-input {
@@ -376,7 +378,7 @@ h1 {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    opacity: .9;
+    opacity: 0;
     background-color: #3DB7C6;
     color: #fff;
     padding: .8rem;
@@ -397,8 +399,8 @@ h1 {
     background-color: #123539;
 }
 
-.hidden {
-    opacity: 0;
+.show-to-top {
+    opacity: .8;
 }
 
 

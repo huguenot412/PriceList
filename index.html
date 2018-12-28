@@ -49,10 +49,10 @@
     }
 
     const showToTopButton = () => {
-        if( window.scrollY >  window.innerHeight / 2 ) {
-            toTopButton.classList.remove('hidden');
+        if( window.scrollY <  window.innerHeight / 2 ) {
+            toTopButton.classList.remove('show-to-top');
         } else {
-            toTopButton.classList.add('hidden');
+            toTopButton.classList.add('show-to-top');
         }
     }
 
