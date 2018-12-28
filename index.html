@@ -18,16 +18,19 @@
 </head>
 <body>
     <div class="page-container">
-        <pricelist></pricelist>
+        <div data-bind="component: selectedComponent"></div>
+        <!-- <pricelist></pricelist> -->
         <quote-tool></quote-tool>
     </div>
     
 <script type="module">
     import { PriceList } from '/components/Pricelist.component.js';
     import { QuoteTool } from '/components/Quote-Tool.component.js';
+    import { ProductPage } from '/components/Product-Page.component.js';
+    import { Store } from '/store/data.js';
 
     const mainViewModel = {
-
+        selectedComponent: Store.selectedComponent
     }
 
     ko.applyBindings(mainViewModel);

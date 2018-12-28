@@ -1,25 +1,22 @@
-import { Store } from '../store/data.js';
+import { Store } from "../store/data.js";
 
-const Product = ko.components.register('product', {
+const ProductPage = ko.components.register('product-page', {
     viewModel: function(params) {
-        this.name = params.product.name;
-        this.MSRP = params.product.MSRP;
-        this.distiPrice = params.product.distiPrice;
-        this.platforms = params.product.platforms;
-        this.sku = params.product.sku;
-        this.qty = params.product.qty;
+        this.name = Store.selectedProduct().name;
+        this.MSRP = Store.selectedProduct().MSRP;
+        this.distiPrice = Store.selectedProduct().distiPrice;
+        this.platforms = Store.selectedProduct().platforms;
+        this.sku = Store.selectedProduct().sku;
+        this.qty = Store.selectedProduct().qty;
         this.addQty = ko.observable(1);
-        this.selectedComponent = Store.selectedComponent();
         this.addToQuote = function() {
             this.qty(Number(this.qty()) + Number(this.addQty()));
             this.addQty(1);
             console.log(`Added ${this.name} to quote`);
-        };
-        this.viewProductPage = function() {
-            console.log(params.product);
-            Store.selectedProduct(params.product);
-            Store.selectedComponent("product-page");
-        };
+        }
+        this.returnToPriceList = function(){
+            Store.selectedComponent("pricelist");
+        }
     },
     template: `
         <div class="product">
@@ -39,9 +36,9 @@ const Product = ko.components.register('product', {
                 <span class="product__qty-label">Qty: </span>
                 <input type="number" class="product__add-qty" data-bind="value: addQty" min="0">
             </div>
-            <button data-bind="click: viewProductPage">View Product Page</button>
+            <button data-bind="click: returnToPriceList">Return To Price List</button>
         </div>
     `
 });
 
-export { Product }
+export { ProductPage }

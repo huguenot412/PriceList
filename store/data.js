@@ -145,6 +145,8 @@ const Store = {
             qty: ko.observable(0)
         }
     ]),
+    selectedComponent: ko.observable('pricelist'),
+    selectedProduct: ko.observable()
 }
 
 export { Store }

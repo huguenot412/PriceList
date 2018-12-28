@@ -10,8 +10,10 @@ const PriceList = ko.components.register('pricelist', {
                 return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
             }));
         });
+        
         this.searchQuery = ko.observable('');
         this.searchBy = ko.observable('name');
+        this.selectedProduct = ko.observable();
         this.searchedProducts = ko.computed(function() {
             if(this.searchBy() === 'platform') {
                 return this.products().filter(product => {
@@ -46,7 +48,7 @@ const PriceList = ko.components.register('pricelist', {
                 <p class="products__no-results" data-bind="if: searchedProducts().length == 0">No search results found.</p>
                 <ul class="products__list" data-bind="foreach: { data: searchedProducts, as: 'product'}">
                     <li>
-                        <product params="product: product"></product>
+                        <product params="product: product, selectedProduct: product"></product>
                     </li>
                 </ul>
             </div>
