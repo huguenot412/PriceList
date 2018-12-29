@@ -15,10 +15,18 @@ const QuoteItem = ko.components.register('quote-item', {
         this.removeItem = function() {
             this.qty(0);
         }
+        this.tooltipMSRP = ko.computed(function() {
+            return `${this.MSRP} x ${this.qty()} = $${this.MSRP * this.qty()}`;
+        }, this);
+        this.tooltipDisti = ko.computed(function() {
+            return `${this.distiPrice} x ${this.qty()} = $${this.distiPrice * this.qty()}`;
+        }, this);
     },
     template: `
         <li class="quote-item">
-            <div class="quote-item__qty"><span class="quote-item__qty-num" data-bind="text: qty()"></span></div>
+            <div class="quote-item__qty">
+                <span class="quote-item__qty-num" data-bind="text: qty()"></span>
+            </div>
             <div class="quote-item__name">
                 <span data-bind="text: name"></span>
                 <div class="quote-item__icons">
@@ -31,8 +39,8 @@ const QuoteItem = ko.components.register('quote-item', {
                 <div class="tooltip-wrapper">
                     <ul>
                         <li>SKU: <span data-bind="text: sku"></span></li>
-                        <li>MSRP: $<span data-bind="text: MSRP"></span></li>
-                        <li>Disti: $<span data-bind="text: distiPrice"></span></li>
+                        <li>MSRP: $<span data-bind="text: tooltipMSRP"></span></li>
+                        <li>Disti: $<span data-bind="text: tooltipDisti"></span></li>
                     </ul>
                 </div>
             </div>

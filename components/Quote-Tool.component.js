@@ -54,8 +54,9 @@ const QuoteTool = ko.components.register('quote-tool', {
             <div class="quote-tool__header">
                 <h1 class="quote-tool__title">Quote Tool</h1>
                 <div class="quote-tool__totalItems">
-                    <span data-bind="text: totalQuoteItems"></span>
-                    <i class="fas fa-shopping-cart"></i>
+                    <span total-items__number data-bind="text: totalQuoteItems"></span>
+                    <span class="total-items__items">items</span>
+                    <i class="total-items__icon fas fa-shopping-cart"></i>
                 </div>
             </div>
             <div class="quote__dashboard">

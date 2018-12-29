@@ -9,6 +9,12 @@ const Discounts = ko.components.register('discounts', {
         this.partnerMargin = ko.computed(function() {
                 return Number(this.partnerLevelDiscount()) + Number(this.additionalDiscount());
             }, this);
+        this.increaseAdditionalDiscount = function() {
+            this.additionalDiscount(this.additionalDiscount() + 1);
+        }
+        this.decreaseAdditionalDiscount = function() {
+            this.additionalDiscount(this.additionalDiscount() - 1);
+        }
     },
     template: `
         <div class="deal-reg">
@@ -29,7 +35,14 @@ const Discounts = ko.components.register('discounts', {
         </div>
         <div class="additional-discounts">
             <h2>Calculate Additional Discounts:</h2>
-            <div><input type="number" class="discount-input" data-bind="textInput: additionalDiscount" min="0" max="100"> %</div>
+            <div class="additional-discount-container">
+                <input type="text" class="discount-input" data-bind="textInput: additionalDiscount">   
+                <span class="number-controls">
+                    <i class="fas fa-chevron-up" data-bind="click: increaseAdditionalDiscount"></i>
+                    <i class="fas fa-chevron-down" data-bind="click: decreaseAdditionalDiscount"></i>
+                </span>
+                <span class="additional-discount__percentage">%</span>
+            </div>
         </div>
     `
 });

@@ -23,6 +23,12 @@ const Product = ko.components.register('product', {
                 top: 0
             });
         };
+        this.increaseAddQty = function() {
+            this.addQty(this.addQty() + 1);
+        }
+        this.decreaseAddQty = function() {
+            this.addQty(this.addQty() - 1);
+        }
     },
     template: `
         <div class="product">
@@ -34,13 +40,17 @@ const Product = ko.components.register('product', {
             <ul class="product__platforms" data-bind="foreach: platforms">
                 <li class="product__platform"data-bind="text: $data"></li>        
             </ul>
-            <div class="btn product__button" data-bind="click: addToQuote">
-                <i class="fas fa-plus"></i>
-                Add To Quote
-            </div>
             <div class="product__addQty-wrapper">
+                <div class="btn product__button" data-bind="click: addToQuote">
+                    <i class="fas fa-plus"></i>
+                    Add To Quote
+                </div>
                 <span class="product__qty-label">Qty: </span>
-                <input type="number" class="product__add-qty" data-bind="value: addQty" min="0">
+                <input type="text" class="product__add-qty" data-bind="value: addQty">
+                <span class="number-controls">
+                    <i class="fas fa-chevron-up" data-bind="click: increaseAddQty"></i>
+                    <i class="fas fa-chevron-down" data-bind="click: decreaseAddQty"></i>
+                </span>
             </div>
             <div class="product__corner-button" data-bind="click: viewProductPage">
                 <i class="corner-button__icon fas fa-info-circle"></i>
