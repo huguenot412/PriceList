@@ -43,7 +43,7 @@ const Store = {
             MSRP: 40,
             distiPrice: 35,
             sku: 'AD89KJDF0893098',
-            platforms: ['PS4', 'XBOX One', 'PC'],
+            platforms: ['PS4', 'PC'],
             qty: ko.observable(0)
         },
         {
@@ -63,7 +63,7 @@ const Store = {
             qty: ko.observable(0)
         },
         {
-            name: 'Super Smash Bros.',
+            name: 'Super Smash Bros. Ultimate',
             MSRP: 60,
             distiPrice: 50,
             sku: '120984A0JA3098',
@@ -173,7 +173,41 @@ const Store = {
             sku: '13566F0JA3098',
             platforms: ['PC', 'PS4', 'XBOX One'],
             qty: ko.observable(0)
-        }
+        },
+        {
+            name: 'Dead Cells',
+            MSRP: 30,
+            distiPrice: 20,
+            sku: '139875566F0JA3098',
+            platforms: ['PC', 'PS4', 'XBOX One', 'Switch'],
+            qty: ko.observable(0)
+        },
+        {
+            name: 'Celeste',
+            MSRP: 30,
+            distiPrice: 20,
+            sku: '12451326F0JA3098',
+            platforms: ['PC', 'PS4', 'XBOX One', 'Switch'],
+            qty: ko.observable(0)
+        },
+        {
+            name: 'The Elder Srolls V: Skyrim',
+            MSRP: 60,
+            distiPrice: 50,
+            sku: '11234326F0JA3098',
+            platforms: ['PC', 'PS4', 'XBOX One', 'Switch'],
+            qty: ko.observable(0)
+        },
+        {
+            name: 'Thumper',
+            MSRP: 40,
+            distiPrice: 30,
+            sku: '1987626F0JA3098',
+            platforms: ['PC', 'PS4', 'XBOX One', 'Switch'],
+            qty: ko.observable(0)
+        },
+
+
     ]),
     selectedComponent: ko.observable('pricelist'),
     selectedProduct: ko.observable()

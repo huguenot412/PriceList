@@ -1,4 +1,5 @@
 import { Store } from '../store/data.js';
+import { NumberInput } from './Number-Input.component.js';
 
 const Product = ko.components.register('product', {
     viewModel: function(params) {
@@ -23,12 +24,6 @@ const Product = ko.components.register('product', {
                 top: 0
             });
         };
-        this.increaseAddQty = function() {
-            this.addQty(this.addQty() + 1);
-        }
-        this.decreaseAddQty = function() {
-            this.addQty(this.addQty() - 1);
-        }
     },
     template: `
         <div class="product">
@@ -46,11 +41,7 @@ const Product = ko.components.register('product', {
                     Add To Quote
                 </div>
                 <span class="product__qty-label">Qty: </span>
-                <input type="text" class="product__add-qty" data-bind="value: addQty">
-                <span class="number-controls">
-                    <i class="fas fa-chevron-up" data-bind="click: increaseAddQty"></i>
-                    <i class="fas fa-chevron-down" data-bind="click: decreaseAddQty"></i>
-                </span>
+                <number-input params="number: addQty"></number-input>
             </div>
             <div class="product__corner-button" data-bind="click: viewProductPage">
                 <i class="corner-button__icon fas fa-info-circle"></i>

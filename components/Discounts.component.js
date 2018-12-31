@@ -36,11 +36,7 @@ const Discounts = ko.components.register('discounts', {
         <div class="additional-discounts">
             <h2>Calculate Additional Discounts:</h2>
             <div class="additional-discount-container">
-                <input type="text" class="discount-input" data-bind="textInput: additionalDiscount">   
-                <span class="number-controls">
-                    <i class="fas fa-chevron-up" data-bind="click: increaseAdditionalDiscount"></i>
-                    <i class="fas fa-chevron-down" data-bind="click: decreaseAdditionalDiscount"></i>
-                </span>
+                <number-input params="number: additionalDiscount"></number-input>
                 <span class="additional-discount__percentage">%</span>
             </div>
         </div>

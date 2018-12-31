@@ -21,12 +21,6 @@ const ProductPage = ko.components.register('product-page', {
         this.returnToPriceList = function(){
             Store.selectedComponent("pricelist");
         };
-        this.increaseAddQty = function() {
-            this.addQty(this.addQty() + 1);
-        }
-        this.decreaseAddQty = function() {
-            this.addQty(this.addQty() - 1);
-        }
     },
     template: `
         <div class="product-page">
@@ -48,11 +42,7 @@ const ProductPage = ko.components.register('product-page', {
                         Add To Quote
                     </div>
                     <span class="product__qty-label">Qty: </span>
-                    <input type="text" class="product__add-qty" data-bind="value: addQty">
-                    <span class="number-controls">
-                        <i class="fas fa-chevron-up" data-bind="click: increaseAddQty"></i>
-                        <i class="fas fa-chevron-down" data-bind="click: decreaseAddQty"></i>
-                    </span>
+                    <number-input params="number: addQty"></number-input>
                 </div>
             </div>
             <div class="product-page__info product-page__info--description" data-bind="if: description">
