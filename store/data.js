@@ -191,7 +191,7 @@ const Store = {
             qty: ko.observable(0)
         },
         {
-            name: 'The Elder Srolls V: Skyrim',
+            name: 'The Elder Scrolls V: Skyrim',
             MSRP: 60,
             distiPrice: 50,
             sku: '11234326F0JA3098',
